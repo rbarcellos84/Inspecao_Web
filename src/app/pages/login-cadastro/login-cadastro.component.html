@@ -1,0 +1,100 @@
+<div class="login-container">
+    <div class="card-body">
+        <form [formGroup]="formCadastroLogin" (ngSubmit)="onSubmit()">
+            <div class="text-center mb-3">
+                <h3>Cadastro ao sistema</h3>
+                <p>Entre com suas credenciais para se cadastrar.</p>
+            </div>
+            <div class="mb-3">
+                <label>Entre com seu nome:</label>
+                <input type="text" class="form-control" placeholder="Nome" formControlName="nome">
+                <div *ngIf="form.nome.touched && form.nome.invalid" class="text-danger">
+                    <span *ngIf="form.nome.errors.required">
+                        Por favor, informe o seu nome.
+                    </span>
+                    <span *ngIf="form.nome.errors.minlength">
+                        Por favor, informe no mínimo 4 caracteres.
+                    </span>
+                    <span *ngIf="form.nome.errors.maxlength">
+                        Por favor, informe no máximo 150 caracteres.
+                    </span>
+                    <span *ngIf="form.nome.errors.pattern">
+                        Por favor, informe no minimo 4 e no maximo 150 digitos somente letras e números.
+                    </span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Entre com seu login:</label>
+                <input type="text" class="form-control" placeholder="Login" formControlName="login">
+                <div *ngIf="form.login.touched && form.login.invalid" class="text-danger">
+                    <span *ngIf="form.login.errors.required">
+                        Por favor, informe o login utilizando somente letras.
+                    </span>
+                    <span *ngIf="form.login.errors.minlength">
+                        Por favor, informe no mínimo 8 caracteres.
+                    </span>
+                    <span *ngIf="form.login.errors.maxlength">
+                        Por favor, informe no máximo 12 caracteres.
+                    </span>
+                    <span *ngIf="form.login.errors.pattern">
+                        Por favor, informe no minimo 8 e no maximo 12 digitos somente letras e números.
+                    </span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label>Entre com sua senha:</label>
+                    <input type="password" class="form-control" placeholder="Senha" formControlName="senha"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#,@,!,$,%,&])[A-Za-z\d#,@,!,$,%,&]{8,20}$" 
+                    title="A senha deve ter entre 8 e 20 caracteres, pelo menos uma letra maiúscula, uma letra minúscula, um caractere numérico e um dos seguintes caracteres especiais: #,@,!,$,%,&">
+                    <div *ngIf="form.senha.touched && form.senha.invalid" class="text-danger">
+                        <span *ngIf="form.senha.errors.required">
+                            Por favor, informe uma senha.
+                        </span>
+                        <span *ngIf="form.senha.errors.minlength">
+                            Por favor, informe no mínimo 8 caracteres.
+                        </span>
+                        <span *ngIf="form.senha.errors.maxlength">
+                            Por favor, informe no máximo 20 caracteres.
+                        </span>
+                        <span *ngIf="form.senha.errors.pattern">
+                            Informe uma senha de 8 a 20 carateres e contenha 1 letra maiúscola, 1 letra minúscola, 1 numero e 1 caracter especial (@!#$%&).
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label>Confirme sua senha:</label>
+                    <input type="password" class="form-control" placeholder="Confirmar senha" formControlName="confirmeSenha"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#,@,!,$,%,&])[A-Za-z\d#,@,!,$,%,&]{8,20}$" 
+                    title="A senha deve ter entre 8 e 20 caracteres, pelo menos uma letra maiúscula, uma letra minúscula, um caractere numérico e um dos seguintes caracteres especiais: #,@,!,$,%,&">
+                    <div *ngIf="form.confirmeSenha.touched && form.confirmeSenha.invalid" class="text-danger">
+                        <span *ngIf="form.confirmeSenha.errors.required">
+                            Por favor, informe uma senha.
+                        </span>
+                        <span *ngIf="form.confirmeSenha.errors.minlength">
+                            Por favor, informe no mínimo 8 caracteres.
+                        </span>
+                        <span *ngIf="form.confirmeSenha.errors.maxlength">
+                            Por favor, informe no máximo 20 caracteres.
+                        </span>
+                        <span *ngIf="form.confirmeSenha.errors.pattern">
+                            Informe uma senha de 8 a 20 carateres e contenha 1 letra maiúscola, 1 letra minúscola, 1 numero e 1 caracter especial (@!#$%&).
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 d-grid">
+                <input type="submit" value="Cadastrar" class="btn btn-sm btn-warning" 
+                        [disabled]="!formCadastroLogin.valid">
+            </div>
+            <div class="text-center">
+                Voltar para tela de
+                <a routerLinkActive="selected" [routerLink]="['/login']">
+                    <strong>login</strong>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

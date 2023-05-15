@@ -1,3 +1,5 @@
+Um projeto desenvolvido em angular 14, utilizando métodos de acesso, token Bearer JWT, bootstrap e sweetalert2. O projeto consiste em cadastrar um login, autenticar, cadastrar uma inspeção por usuário e listar as inspeções cadastradas.
+
 # InspecaoWeb
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.

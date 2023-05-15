@@ -1,0 +1,39 @@
+<div>
+    <app-menu></app-menu>
+</div>
+<hr>
+<div class="card">
+    <div class="container col-md-12">
+        <h4>Consulta de inspeção</h4>
+        <p>Listagem de inspeção do corretor.</p>
+        <hr>
+    </div>
+    <br>
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+                <th>Código Empresa</th>
+                <th>Código Corretor</th>
+                <th>Código Produto</th>
+                <th>Nome Produto</th>
+                <th>Número Inspeção</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let inspecao of listaInspecao" class="text-color:Black">
+                <td>{{inspecao.codigoEmpresa}}</td>
+                <td>{{inspecao.codigoCorretor}}</td>
+                <td>{{inspecao.codigoProduto}}</td>
+                <td>{{inspecao.nomeProduto}}</td>
+                <td>{{inspecao.numeroInspecao}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">
+                    Quantidade de registro: {{listaInspecao.length}}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

@@ -1,0 +1,128 @@
+<div>
+    <app-menu></app-menu>
+</div>
+<hr>
+<div class="card">
+    <div class="container md-3">
+        <form [formGroup]="formInspecaoCadastro" (ngSubmit)="onSubmit()">
+            <div class="container col-md-12">
+                <h4>Cadstro de Inspeção</h4>
+                <p>Tela para o cadastro da inspeções do funcionário.</p>
+                <hr>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label>Código da empresa:</label>
+                    <input type="text" class="form-control" placeholder="Codigo da empresa" formControlName="codigoEmpresa">
+                    <div *ngIf="form.codigoEmpresa.touched && form.codigoEmpresa.invalid" class="text-danger">
+                        <span *ngIf="form.codigoEmpresa.errors.required">
+                            Por favor, informe o codigo da empresa com letras e números.
+                        </span>
+                        <span *ngIf="form.codigoEmpresa.errors.minlength">
+                            Por favor, informe no mínimo 8 caracteres.
+                        </span>
+                        <span *ngIf="form.codigoEmpresa.errors.maxlength">
+                            Por favor, informe no máximo 12 caracteres.
+                        </span>
+                        <span *ngIf="form.codigoEmpresa.errors.pattern">
+                            Por favor, informe no minimo 8 e no maximo 12 digitos somente letras e números.
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label>Código do corretor:</label>
+                    <input type="text" class="form-control" placeholder="Codigo do corretor" formControlName="codigoCorretor">
+                    <div *ngIf="form.codigoCorretor.touched && form.codigoCorretor.invalid" class="text-danger">
+                        <span *ngIf="form.codigoCorretor.errors.required">
+                            Por favor, informe o codigo do corretor com números.
+                        </span>
+                        <span *ngIf="form.codigoCorretor.errors.minlength">
+                            Por favor, informe no mínimo 8 caracteres.
+                        </span>
+                        <span *ngIf="form.codigoCorretor.errors.maxlength">
+                            Por favor, informe no máximo 12 caracteres.
+                        </span>
+                        <span *ngIf="form.codigoCorretor.errors.pattern">
+                            Por favor, informe no minimo 8 e no maximo 12 digitos somente letras e números.
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label>Código do produto:</label>
+                    <input type="text" class="form-control" placeholder="Codigo do produto" formControlName="codigoProduto">
+                    <div *ngIf="form.codigoProduto.touched && form.codigoProduto.invalid" class="text-danger">
+                        <span *ngIf="form.codigoProduto.errors.required">
+                            Por favor, informe o codigo do produto com números.
+                        </span>
+                        <span *ngIf="form.codigoProduto.errors.minlength">
+                            Por favor, informe no mínimo 8 caracteres.
+                        </span>
+                        <span *ngIf="form.codigoProduto.errors.maxlength">
+                            Por favor, informe no máximo 12 caracteres.
+                        </span>
+                        <span *ngIf="form.codigoProduto.errors.pattern">
+                            Por favor, informe no minimo 8 e no maximo 12 digitos somente letras e números.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label>Nome do produto:</label>
+                    <input type="text" class="form-control" placeholder="Nome do produto" formControlName="nomeProduto">
+                    <div *ngIf="form.nomeProduto.touched && form.nomeProduto.invalid" class="text-danger">
+                        <span *ngIf="form.nomeProduto.errors.required">
+                            Por favor, informe o nome do produto com letras e números.
+                        </span>
+                        <span *ngIf="form.nomeProduto.errors.minlength">
+                            Por favor, informe no mínimo 8 caracteres.
+                        </span>
+                        <span *ngIf="form.nomeProduto.errors.maxlength">
+                            Por favor, informe no máximo 50 caracteres.
+                        </span>
+                        <span *ngIf="form.nomeProduto.errors.pattern">
+                            Por favor, informe no minimo 3 e no maximo 50 digitos somente letras e números.
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label>Número da inspeção:</label>
+                    <input type="text" class="form-control" placeholder="Número da inspeção" formControlName="numeroInspecao">
+                    <div *ngIf="form.numeroInspecao.touched && form.numeroInspecao.invalid" class="text-danger">
+                        <span *ngIf="form.numeroInspecao.errors.required">
+                            Por favor, informe o número da inspeção com números.
+                        </span>
+                        <span *ngIf="form.numeroInspecao.errors.minlength">
+                            Por favor, informe no mínimo 8 caracteres.
+                        </span>
+                        <span *ngIf="form.numeroInspecao.errors.maxlength">
+                            Por favor, informe no máximo 12 caracteres.
+                        </span>
+                        <span *ngIf="form.numeroInspecao.errors.pattern">
+                            Por favor, informe no minimo 8 e no maximo 12 digitos somente letras e números.
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <br />
+            <div class="row mb-3">
+                <div class="col-md-2">
+                    <div class="mb-3 d-grid">
+                        <input type="submit" value="Cadastrar" class="btn btn-sm btn-warning" 
+                        [disabled]="!formInspecaoCadastro.valid">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="mb-3 d-grid">
+                        <button class="btn btn-sm btn-warning" routerLink="/home">
+                            Voltar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<br>
